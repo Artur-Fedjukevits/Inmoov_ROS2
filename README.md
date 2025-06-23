@@ -1,5 +1,7 @@
 # Inmoov_ROS2
 
+Status of the project: Working. June 2026
+
 ROS 2-based control system for a humanoid InMoov robot designed by Gael Langevin. <br>
 This project integrates basic autonomous behavior, visual perception, speech synthesis, and distributed servo control using ROS 2.
 
