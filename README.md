@@ -2,8 +2,10 @@
 
 **Status of the project: Working with no bugs. June 2025**
 
-ROS 2-based control system for a humanoid InMoov robot designed by Gael Langevin. <br>
+ROS 2-based control system for a humanoid InMoov robot designed by [Gaël Langevin](https://inmoov.fr/). <br>
 This project integrates basic autonomous behavior, visual perception, speech synthesis, and distributed servo control using ROS 2.
+
+Demo video:
 
 [![Watch the video](https://img.youtube.com/vi/HUr0_2Sw4ho/0.jpg)](https://www.youtube.com/watch?v=HUr0_2Sw4ho)
 
@@ -19,19 +21,6 @@ Main features:
 - Distributed servo control via Arduino Uno and Mega
 - Behavior logic based on recognized individuals
 - ROS 2 node-based architecture, designed for reproducibility
-
-## Repository Structure
-
-Arduino/        -> Code for the two Arduino-based subsystems<br>
-inmoov_ws/      -> ROS 2 workspace containing all custom packages<br>
-piper/          -> Local speech synthesis system<br>
-docs/           -> Technical documentation (hardware, configuration, usage)<br>
-
-## Quick Start
-
-cd inmoov_ws<br>
-colcon build<br>
-source install/setup.bash<br>
 
 All nodes are designed to run offline in a local ROS 2 environment.
 
