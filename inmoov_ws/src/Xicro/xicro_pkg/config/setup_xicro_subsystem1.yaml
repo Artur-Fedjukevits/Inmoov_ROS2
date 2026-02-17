@@ -1,29 +1,49 @@
 microcontroller:
-  idmcu: 1 # id of mcu 
-  namespace: "subsys1" # namespace
-  generate_library_Path: "Arduino"  # path for generate library
+  idmcu: 1
+  namespace: "subsys_right"
+  generate_library_Path: "Arduino"
   connection:
-    type: "UART"   # ["UART","UDP"] 
-    serial_port: "/dev/serial/by-id/usb-Arduino__www.arduino.cc__0043_75330303035351A07101-if00"  # for Serial UART subsystem 1"
-    baudrate: 57620  # for UART
-    ip_address_mcu: ""  # for UDP example "192.168.1.xx"
-    udp_port_mcu: 0  # for UDP
+    type: "UART"
+    serial_port: "/dev/serial/by-path/pci-0000:c6:00.3-usb-0:1.3:1.0-port0"
+    baudrate: 115200
+    ip_address_mcu: ""
+    udp_port_mcu: 0
 
-
-ros: # setup ros is reference from microcontroller example publisher is mean microcontroller publish to ros network
-  publisher:  [                           ]
-  subscriber: [
-    [1, "thumb_finger_R", "std_msgs/Int16.msg"],
-    [2, "index_finger_R", "std_msgs/Int16.msg"],
-    [3, "middle_finger_R", "std_msgs/Int16.msg"],
-    [4, "ring_finger_R", "std_msgs/Int16.msg"],
-    [5, "pinky_finger_R", "std_msgs/Int16.msg"],
-    [6, "bicep_R", "std_msgs/Int16.msg"],
-    [7, "rotate_R", "std_msgs/Int16.msg"],
-    [8, "shoulder_R", "std_msgs/Int16.msg"],
-    [9, "omoplate_R", "std_msgs/Int16.msg"]    
+ros:
+  publisher: [
+    [1, "ultrasonicRight_distance", "std_msgs/Int16.msg"],
+    [2, "pir_state", "std_msgs/Bool.msg"]
   ]
-  srv_client: [                           ]
-  srv_server: [                           ]
-  action_client: [                        ]
-  action_server: [                        ]
+
+
+  subscriber: [
+    # HAND RIGHT
+    [1,  "thumb_finger_R",  "std_msgs/Int16.msg"],
+    [2,  "index_finger_R",  "std_msgs/Int16.msg"],
+    [3,  "middle_finger_R", "std_msgs/Int16.msg"],
+    [4,  "ring_finger_R",   "std_msgs/Int16.msg"],
+    [5,  "pinky_finger_R",  "std_msgs/Int16.msg"],
+    [6,  "wrist_R",         "std_msgs/Int16.msg"],
+
+    # ARM RIGHT
+    [7,  "bicep_R",         "std_msgs/Int16.msg"],
+    [8,  "rotate_R",        "std_msgs/Int16.msg"],
+    [9,  "shoulder_R",      "std_msgs/Int16.msg"],
+    [10, "omoplate_R",      "std_msgs/Int16.msg"],
+
+    # HEAD (i2Head / Right Mega)
+    [11, "rollneck",        "std_msgs/Int16.msg"],
+    [12, "eye_lr_R",      "std_msgs/Int16.msg"],
+    [13, "eye_ud_R",      "std_msgs/Int16.msg"],
+    [14, "upperLip",        "std_msgs/Int16.msg"],
+    [15, "ultrasonic_enable", "std_msgs/Bool.msg"],
+    [16, "ultrasonic_trigger", "std_msgs/Empty.msg"],
+    [17, "pir_enable", "std_msgs/Bool.msg"]
+
+
+  ]
+
+  srv_client: []
+  srv_server: []
+  action_client: []
+  action_server: []

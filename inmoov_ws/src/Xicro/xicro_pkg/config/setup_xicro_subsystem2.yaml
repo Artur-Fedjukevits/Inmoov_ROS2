@@ -1,34 +1,84 @@
 microcontroller:
-  idmcu: 2 # id of mcu 
-  namespace: "subsys2" # namespace
-  generate_library_Path: "Arduino"  # path for generate library
+  idmcu: 2
+  namespace: "subsys2"
+  generate_library_Path: "Arduino"
+
   connection:
-    type: "UART"   # ["UART","UDP"] 
-    serial_port: "/dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_55332333230351803271-if00"  # for Serial UART Subsystem 2"
-    baudrate: 57620  # for UART
-    ip_address_mcu: ""  # for UDP example "192.168.1.xx"
-    udp_port_mcu: 0  # for UDP
+    type: "UART"
+    serial_port: "/dev/serial/by-path/pci-0000:c6:00.3-usb-0:1.4:1.0-port0"
+    baudrate: 115200
+    ip_address_mcu: ""
+    udp_port_mcu: 0
 
 
-ros: # setup ros is reference from microcontroller example publisher is mean microcontroller publish to ros network
-  publisher:  [                           ]
-  subscriber: [
-    [1, "thumb_finger_L", "std_msgs/Int16.msg"],
-    [2, "index_finger_L", "std_msgs/Int16.msg"],
-    [3, "middle_finger_L", "std_msgs/Int16.msg"],
-    [4, "ring_finger_L", "std_msgs/Int16.msg"],
-    [5, "pinky_finger_L", "std_msgs/Int16.msg"],
-    [6, "bicep_L", "std_msgs/Int16.msg"],
-    [7, "rotate_L", "std_msgs/Int16.msg"],
-    [8, "shoulder_L", "std_msgs/Int16.msg"],
-    [9, "omoplate_L", "std_msgs/Int16.msg"],
-    [10, "neck", "std_msgs/Int16.msg"],
-    [11, "rothead", "std_msgs/Int16.msg"],
-    [12, "jaw", "std_msgs/Int16.msg"],
-    [13, "eye_x", "std_msgs/Int16.msg"],
-    [14, "eye_y", "std_msgs/Int16.msg"]
+ros:
+  publisher: [
+    [1, "ultrasonicLeft_distance", "std_msgs/Int16.msg"]
   ]
-  srv_client: [                           ]
-  srv_server: [                           ]
-  action_client: [                        ]
-  action_server: [                        ]
+
+  subscriber: [
+    # -------------------------
+    # LEFT ARM and LEFT HAND 
+    # -------------------------
+
+    [1,  "thumb_L",       "std_msgs/Int16.msg"],
+    [2,  "index_L",       "std_msgs/Int16.msg"],
+    [3,  "majeure_L",     "std_msgs/Int16.msg"],
+    [4,  "ringFinger_L",  "std_msgs/Int16.msg"],
+    [5,  "pinky_L",       "std_msgs/Int16.msg"],
+    [6,  "wrist_L",       "std_msgs/Int16.msg"],
+
+    [7,  "bicep_L",       "std_msgs/Int16.msg"],
+    [8,  "rotate_L",      "std_msgs/Int16.msg"],
+    [9,  "shoulder_L",    "std_msgs/Int16.msg"],
+    [10, "omoplate_L",    "std_msgs/Int16.msg"],
+
+    # -------------------------
+    # i2Head 
+    # -------------------------
+    [11, "neck",     "std_msgs/Int16.msg"],
+    [12, "rothead",  "std_msgs/Int16.msg"],
+
+    [13, "eye_lr_L",       "std_msgs/Int16.msg"],
+    [14, "eye_ud_L",       "std_msgs/Int16.msg"],
+
+    [15, "jaw",            "std_msgs/Int16.msg"],
+
+    # -------------------------
+    # Stomack 
+    # -------------------------
+
+    [16, "topstom",         "std_msgs/Int16.msg"],
+    [17, "midstom",         "std_msgs/Int16.msg"],
+    [18, "lowstom",         "std_msgs/Int16.msg"],
+
+    # -------------------------
+    # Ultrasonic Sensor 
+    # -------------------------
+
+    [19, "ultrasonic_enable", "std_msgs/Bool.msg"],
+    [20, "ultrasonic_trigger", "std_msgs/Empty.msg"],
+
+    # -------------------------
+    # PCA9685 CHANNELS 
+    # -------------------------
+
+    [21, "eyelid_L_Upper",   "std_msgs/Int16.msg"],
+    [22, "eyelid_L_Lower",   "std_msgs/Int16.msg"],
+    [23, "eyelid_R_Upper",  "std_msgs/Int16.msg"],
+    [24, "eyelid_R_Lower",  "std_msgs/Int16.msg"],
+
+    [25, "eyebrow_L",       "std_msgs/Int16.msg"],
+    [26, "eyebrow_R",      "std_msgs/Int16.msg"],
+
+    [27, "cheek_L",         "std_msgs/Int16.msg"],
+    [28, "cheek_R",        "std_msgs/Int16.msg"],
+
+    [29, "forhead_L",       "std_msgs/Int16.msg"],
+    [30, "forhead_R",      "std_msgs/Int16.msg"]
+  ]
+
+  srv_client: []
+  srv_server: []
+  action_client: []
+  action_server: []
