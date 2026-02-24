@@ -37,7 +37,7 @@ ros:
     [13, "eye_ud_R",      "std_msgs/Int16.msg"],
     [14, "upperLip",        "std_msgs/Int16.msg"],
     [15, "ultrasonic_enable", "std_msgs/Bool.msg"],
-    [16, "ultrasonic_trigger", "std_msgs/Empty.msg"],
+    [16, "ultrasonic_trigger", "std_msgs/Bool.msg"],
     [17, "pir_enable", "std_msgs/Bool.msg"]
 
 

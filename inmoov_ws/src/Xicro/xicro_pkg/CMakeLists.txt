@@ -30,8 +30,8 @@ install(PROGRAMS
 #xicro
   scripts/generate_library.py
   scripts/generate_xicro_node.py
-  scripts/xicro_node_subsys1_ID_1_arduino.py
-  scripts/xicro_node_subsys2_ID_2_arduino.py
+  scripts/xicro_node_subsys_right_ID_1_arduino.py
+  scripts/xicro_node_subsys_left_ID_2_arduino.py
 #orcix
   DESTINATION lib/${PROJECT_NAME}
 )

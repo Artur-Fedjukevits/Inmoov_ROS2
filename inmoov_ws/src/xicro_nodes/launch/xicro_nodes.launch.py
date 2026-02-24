@@ -33,13 +33,13 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='xicro_nodes',
-            executable='xicro_node_subsys1_ID_1_arduino',
+            executable='xicro_node_subsys_right_ID_1_arduino',
             #name='xicro_subsys1',
             output='screen'
         ),
         Node(
             package='xicro_nodes',
-            executable='xicro_node_subsys2_ID_2_arduino',
+            executable='xicro_node_subsys_left_ID_2_arduino',
             #name='xicro_subsys2',
             output='screen'
         ),

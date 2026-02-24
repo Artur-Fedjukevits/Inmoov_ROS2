@@ -1,6 +1,6 @@
 microcontroller:
   idmcu: 2
-  namespace: "subsys2"
+  namespace: "subsys_left"
   generate_library_Path: "Arduino"
 
   connection:
@@ -57,7 +57,7 @@ ros:
     # -------------------------
 
     [19, "ultrasonic_enable", "std_msgs/Bool.msg"],
-    [20, "ultrasonic_trigger", "std_msgs/Empty.msg"],
+    [20, "ultrasonic_trigger", "std_msgs/Bool.msg"],
 
     # -------------------------
     # PCA9685 CHANNELS 

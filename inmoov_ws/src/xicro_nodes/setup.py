@@ -15,13 +15,13 @@ setup(
     zip_safe=True,
     maintainer='Alejandro Alonso Puig',
     maintainer_email='todo@todo.com',
-    description='ROS 2 package for XICRO communication nodes between ROS 2 and Arduino in the InMoov robot. Includes nodes for subsystem 1 (right arm) and subsystem 2 (left arm and head).',
+    description='ROS 2 package for XICRO communication nodes between ROS 2 and Arduino in the InMoov robot. Includes nodes for subsystem 1 (Right Mega) and subsystem 2 (Left Mega).',
     license='Apache License, Version 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'xicro_node_subsys1_ID_1_arduino = xicro_nodes.xicro_node_subsys1_ID_1_arduino:main',
-            'xicro_node_subsys2_ID_2_arduino = xicro_nodes.xicro_node_subsys2_ID_2_arduino:main',
+            'xicro_node_subsys_right_ID_1_arduino = xicro_nodes.xicro_node_subsys_right_ID_1_arduino:main',
+            'xicro_node_subsys_left_ID_2_arduino = xicro_nodes.xicro_node_subsys_left_ID_2_arduino:main',
         ],
     },
 )
